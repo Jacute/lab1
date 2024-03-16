@@ -54,15 +54,20 @@ func main() {
 			}
 
 		case 2:
-			var a1, b1, c1 float64
+			var a, b, c float64
 
 			fmt.Println("Write sides of triangle")
 			fmt.Print("a: ")
-			fmt.Scan(&a1)
+			fmt.Scan(&a)
 			fmt.Print("b: ")
-			fmt.Scan(&b1)
+			fmt.Scan(&b)
 			fmt.Print("c: ")
-			fmt.Scan(&c1)
+			fmt.Scan(&c)
+
+			if !isTriangle(a, b, c) {
+				fmt.Println("There is no triangle with this sides")
+				break
+			}
 
 		loop2:
 			for {
@@ -72,11 +77,11 @@ func main() {
 
 				switch choice2 {
 				case 1:
-					fmt.Println("Triangle Perimeter: " + strconv.FormatFloat(trianglePerimeter(a1, b1, c1), 'f', -1, 64))
+					fmt.Println("Triangle Perimeter: " + strconv.FormatFloat(trianglePerimeter(a, b, c), 'f', -1, 64))
 				case 2:
-					fmt.Println("Triangle Square: " + strconv.FormatFloat(triangleSquare(a1, b1, c1), 'f', -1, 64))
+					fmt.Println("Triangle Square: " + strconv.FormatFloat(triangleSquare(a, b, c), 'f', -1, 64))
 				case 3:
-					if triangleIsIsosceles(a1, b1, c1) {
+					if triangleIsIsosceles(a, b, c) {
 						fmt.Println("Triangle is isosceles")
 					} else {
 						fmt.Println("Triangle is not isosceles")
