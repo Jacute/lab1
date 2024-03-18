@@ -2,6 +2,7 @@ package main
 
 import "math"
 
+// Проверка на треугольник
 func isTriangle(a, b, c float64) bool {
 	return a+b > c && a+c > b && b+c > a
 }
